@@ -9,6 +9,15 @@ const singerStyle = {
   backgroundColor: 'white'
 }
 function App() {
+  // multiple line take object create ba array take object check kora
+  const friends = ['Touhin', 'Tahin', 'Jannat','Sagor','Naima','Urmi','Tousif']
+  const friendObjet = [
+    {name:'Touhin', job:'web'},
+    {name:'Tahin', job:'network'},
+    {name:'jannat', job:'marketing'},
+    {name:'Sagor', job:'designer'},
+    {name:'Naima', job:'designer'}
+  ]
   return (
     <div className="App">
       <header className="App-header">
@@ -35,10 +44,20 @@ function App() {
         </a>
         <h2 className="App-headerText">Hello React App</h2>
       </header>
-
-      <Person name = "Touhin" profession = "Web"></Person>
-      <Person name = "Tahin" profession = "Network"></Person>
-      <Person name = "Jannat" profession = "Marketing"></Person>
+      {
+        // array take element add korle ta shoow korar jonno 
+        friends.map(friend => <li>Name: {friend}</li>)
+      }
+      {
+        friends.map(friend => <Person name = {friend}></Person>)
+      }
+      {
+        // array object take object kujer bahir kora
+        friendObjet.map(friendObjetMember => <Person name={friendObjetMember.name} profession={friendObjetMember.job}></Person>)
+      }
+      {/* <Person name = {friends[0]} profession = "Web"></Person>
+      <Person name = {friends[1]} profession = "Network"></Person>
+      <Person name = {friends[2]} profession = "Marketing"></Person> */}
     </div>
   );
 }
